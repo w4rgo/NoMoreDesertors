@@ -85,7 +85,7 @@ public class Config {
 
     public static void loadConfig(String filePath) throws IOException {
 
-        configPath = filePath.toString() + File.separator + configFile;
+        configPath = filePath + File.separator + configFile;
         config = new Properties();
         try {
             fi = new FileInputStream(Config.configPath);

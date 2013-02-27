@@ -51,8 +51,9 @@ public class Desertor {
         
         manager.spawnHumanNPC(name, loc);
         HumanEntity en = (HumanEntity) manager.getNPC(name).getBukkitEntity();
-        en.setHealth(player.getHealth());
-
+        if (en.getHealth() > 0 && en.getHealth() < 30) {
+            en.setHealth(player.getHealth());
+        }
 
     }
 

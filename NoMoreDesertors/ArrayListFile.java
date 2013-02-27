@@ -61,6 +61,7 @@ public class ArrayListFile {
             
             writer.append(string + "\n");
             writer.flush();
+            
             writer.close();
         
     }
@@ -101,11 +102,11 @@ public class ArrayListFile {
 
     }
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-
-        ArrayListFile alf = new ArrayListFile("./dropped");
-        //alf.write("jono4");
-        alf.delete("jono4");
-        System.out.println(alf.read());
-    }
+//    public static void main(String[] args) throws FileNotFoundException, IOException {
+//
+//        ArrayListFile alf = new ArrayListFile("./dropped");
+//        //alf.write("jono4");
+//        alf.delete("jono4");
+//        System.out.println(alf.read());
+//    }
 }

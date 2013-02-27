@@ -27,6 +27,7 @@ package NoMoreDesertors;
 
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class NoMoreDesertors extends JavaPlugin{
     
-    private String path = "plugins/NoMoreDesertors/dropped";
+    private String path = "plugins/NoMoreDesertors/dropped.dat";
     
     
     
@@ -63,7 +64,7 @@ public class NoMoreDesertors extends JavaPlugin{
     private HashMap<String,Desertor> desertorsClones = new HashMap<String,Desertor>();
     //private HashMap<String,Desertor> caoticPlayers = new HashMap<String,Desertor>();
     private ArrayList<String> playersDropped = new ArrayList<String>();
-    private ArrayListFile alfDropped = new ArrayListFile(path);
+    private ArrayListFile alfDropped;
     
     private Scheduler scheduler;
 
@@ -120,6 +121,9 @@ public class NoMoreDesertors extends JavaPlugin{
             }
             try {
                 //Load list of persons to drop.
+               // path = "plugins/NoMoreDesertors/dropped.dat";
+                System.out.println(this.getDataFolder().getPath()+ File.separator+"dropped.dat");
+                alfDropped= new ArrayListFile(this.getDataFolder().getPath()+ File.separator+"dropped.dat");
                 playersDropped = alfDropped.read();
                 
         //        try {
